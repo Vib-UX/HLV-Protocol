@@ -1,0 +1,48 @@
+{
+  "name": "hlv-protocol",
+  "version": "0.1.0",
+  "description": "Hash-Locked Value Protocol - Cross-chain liquidity bridge between Lightning Network and Hedera",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter \"./packages/**\" dev",
+    "build": "pnpm --filter \"./packages/**\" build",
+    "test": "pnpm --filter \"./packages/**\" test",
+    "lint": "pnpm --filter \"./packages/**\" lint",
+    "clean": "pnpm --filter \"./packages/**\" clean && rm -rf node_modules",
+    "agent:dev": "pnpm --filter agent dev",
+    "contracts:dev": "pnpm --filter contracts dev",
+    "frontend:dev": "pnpm --filter frontend dev",
+    "contracts:deploy:testnet": "pnpm --filter contracts deploy:testnet",
+    "contracts:deploy:mainnet": "pnpm --filter contracts deploy:mainnet",
+    "mongo:build": "docker build -t hlv-mongodb ./docker/mongodb",
+    "mongo:start": "docker run -d -p 27017:27017 --name hlv-mongodb hlv-mongodb",
+    "mongo:stop": "docker stop hlv-mongodb && docker rm hlv-mongodb"
+  },
+  "keywords": [
+    "lightning-network",
+    "hedera",
+    "htlc",
+    "bitcoin",
+    "defi",
+    "cross-chain",
+    "atomic-swaps",
+    "vincent-protocol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YourUsername/HLV-Protocol.git"
+  },
+  "engines": {
+    "node": ">=22.16.0",
+    "pnpm": ">=10.7.0"
+  },
+  "packageManager": "pnpm@10.7.0",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "prettier": "^3.3.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.5.0",
+    "tsx": "^4.16.0"
+  }
+}
+

@@ -1,0 +1,5 @@
+packages:
+  - 'packages/*'
+  - 'vincent-starter-app/packages/*'
+  - 'vincent-ability-starter-kit/packages/*'
+
