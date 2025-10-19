@@ -1,0 +1,83 @@
+HASHSCAN VERIFICATION UPLOAD INSTRUCTIONS
+==========================================
+
+Contract Address (Hedera): 0.0.7103916
+Contract Address (EVM):    0xa1e63842D193673D615F5b96Be9D890B890110B6
+
+FILES TO UPLOAD:
+================
+
+1. METADATA JSON FILE (Required)
+   File: HTLC.metadata.json
+   
+   Click "Add metadata json file" and upload this file.
+
+2. CONTRACT SOURCE FILES (Required)
+   File: HTLC.sol
+   
+   Click "Contract files" and upload this file.
+
+UPLOAD STEPS:
+=============
+
+Step 1: Add Metadata JSON
+   - Click "Add metadata json file" button
+   - Select: HTLC.metadata.json
+   - Upload this file first
+
+Step 2: Add Source File
+   - Click "Contract files" or "Add files" button
+   - Select: HTLC.sol
+   - Upload this file
+
+Step 3: Submit
+   - Click "Verify" or "Submit" button
+   - Wait for compilation and verification
+
+WHAT EACH FILE CONTAINS:
+========================
+
+HTLC.metadata.json:
+   - Compiler version (0.8.28)
+   - Optimization settings (enabled, 200 runs)
+   - Source code hashes
+   - Contract metadata
+
+HTLC.sol:
+   - Main contract source code
+   - All the smart contract logic
+
+ALTERNATIVE: If the above doesn't work
+=======================================
+
+Try uploading the flattened version instead:
+   File: ../HTLC_flattened.sol (in parent directory)
+   
+This file contains HTLC.sol + all OpenZeppelin dependencies in one file.
+
+EXPECTED RESULT:
+================
+
+After successful verification, you'll see:
+- ✅ Source code visible on Hashscan
+- ✅ "Verified" badge on contract page
+- ✅ Read/Write contract interface available
+- ✅ Public transparency of contract logic
+
+TROUBLESHOOTING:
+================
+
+If verification fails:
+1. Make sure you uploaded BOTH files
+2. Try using HTLC_flattened.sol instead
+3. Check that contract address is correct: 0.0.7103916
+4. Contact Hedera Discord #developers channel
+
+NOTES:
+======
+
+- The contract is already deployed and working
+- Verification only adds source code transparency
+- Your Vincent agent can use the contract regardless of verification status
+- ABI is available in out/HTLC.sol/HTLC.json if needed
+

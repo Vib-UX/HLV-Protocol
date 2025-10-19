@@ -1,0 +1,116 @@
+HASHSCAN VERIFICATION UPLOAD INSTRUCTIONS
+==========================================
+PERMISSIONLESS REBALANCING HTLC - VERSION 2
+==========================================
+
+Contract Address (EVM):    0x22daf30c7b4450Dd5C1b7b58CC5986F46ED36A4f
+Deployment Block:          26554243
+Deployment TX:             0x8d651ec1309b5ecf42967303e1bc9a666e31f757b31a8069c00dcc18564cd3cc
+
+Visit: https://hashscan.io/testnet/contract/0x22daf30c7b4450Dd5C1b7b58CC5986F46ED36A4f
+
+FILES TO UPLOAD:
+================
+
+1. METADATA JSON FILE (Required)
+   File: HTLC.metadata.json
+   
+   Click "Add metadata json file" and upload this file.
+
+2. CONTRACT SOURCE FILES (Required)
+   File: HTLC.sol
+   
+   Click "Contract files" and upload this file.
+
+UPLOAD STEPS:
+=============
+
+Step 1: Add Metadata JSON
+   - Click "Add metadata json file" button
+   - Select: HTLC.metadata.json
+   - Upload this file first
+
+Step 2: Add Source File
+   - Click "Contract files" or "Add files" button
+   - Select: HTLC.sol
+   - Upload this file
+
+Step 3: Submit
+   - Click "Verify" or "Submit" button
+   - Wait for compilation and verification
+
+CONTRACT DETAILS:
+=================
+
+Version: Permissionless Rebalancing HTLC v2
+Compiler: Solidity 0.8.28
+Optimization: Enabled (200 runs)
+EVM Version: Default
+
+Key Changes from V1:
+- Removed 'receiver' field from struct
+- Anyone (except sender) can claim
+- Claimer receives the funds directly
+- True permissionless marketplace model
+- Designed for liquidity rebalancing
+
+WHAT THIS CONTRACT DOES:
+=========================
+
+Enables decentralized Lightning Network ↔ Hedera atomic swaps:
+
+1. Agent A locks wBTC with Lightning payment hash
+2. Agent B pays Lightning invoice → gets preimage
+3. Agent B claims wBTC with preimage
+4. Fully atomic, trustless, permissionless
+
+Perfect for:
+- Lightning node operators
+- Liquidity rebalancing
+- Cross-chain swaps
+- DeFi integrations
+
+EXPECTED RESULT:
+================
+
+After successful verification, you'll see:
+- ✅ Source code visible on Hashscan
+- ✅ "Verified" badge on contract page
+- ✅ Read/Write contract interface available
+- ✅ Public transparency of contract logic
+
+TROUBLESHOOTING:
+================
+
+If verification fails:
+1. Make sure you uploaded BOTH files
+2. Check that contract address is correct
+3. Try using HTLC_flattened.sol instead (in parent directory)
+4. Contact Hedera Discord #developers channel
+
+DEPLOYMENT INFO:
+================
+
+Deployment Cost: 0.5719955 HBAR
+Gas Used: 1,143,991
+Gas Price: 500 gwei
+Block: 26,554,243
+Chain ID: 296 (Hedera Testnet)
+
+NOTES:
+======
+
+This is the PERMISSIONLESS version:
+- No receiver address restriction
+- Sender cannot claim their own HTLC
+- Anyone else with valid preimage can claim
+- Claimer receives the locked funds
+- Designed for open marketplace dynamics
+
+Previous Version (V1):
+- Address: 0xa1e63842D193673D615F5b96Be9D890B890110B6
+- Had receiver-only restriction
+- More centralized model
+
+V2 is the production version for rebalancing use case.
+
