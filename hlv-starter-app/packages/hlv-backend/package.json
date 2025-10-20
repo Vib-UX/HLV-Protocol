@@ -1,0 +1,86 @@
+{
+  "name": "hlv-backend",
+  "version": "1.0.0",
+  "description": "Backend API and job worker for HLV Protocol",
+  "engines": {
+    "node": "^22.16.0",
+    "pnpm": "10.7.0"
+  },
+  "packageManager": "pnpm@10.7.0",
+  "scripts": {
+    "test": "pnpm jest",
+    "lint": "pnpm eslint ./src",
+    "build": "pnpm unbuild",
+    "dev": "pnpm dotenvx run -- pnpm tsx watch src/bin/serverWorker.ts",
+    "start": "node ./dist/bin/serverWorker.mjs",
+    "startWorker": "node ./dist/bin/jobWorker.mjs",
+    "startApiServer": "node ./dist/bin/apiServer.mjs",
+    "clean": "pnpm exec rm -Rf node_modules dist",
+    "mongo:build": "docker build -f Dockerfile.mongo -t local-mongo .",
+    "mongo:up": "mkdir -p data && (docker run -d --name mongo --env-file .env -p 27017:27017 -v \"$PWD/data:/data/db\" local-mongo || docker start mongo)",
+    "mongo:stop": "docker stop mongo || true",
+    "mongo:rm": "docker rm -f mongo || true",
+    "mongo:logs": "docker logs -f mongo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/btc/HLV-Protocol.git"
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "serverWorker": "./dist/bin/serverWorker.mjs",
+    "jobWorker": "./dist/bin/jobWorker.mjs",
+    "apiServer": "./dist/bin/apiServer.mjs"
+  },
+  "private": true,
+  "peerDependencies": {
+    "ethers": "^5.8.0",
+    "zod": "^3.25.76"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.39.0",
+    "@hashgraph/sdk": "^2.52.0",
+    "@hlvuser/ability-hedera-htlc": "^1.0.0",
+    "@hlvuser/ability-lightning-invoice": "^1.0.0",
+    "@hlvuser/ability-lightning-payment": "^0.1.0",
+    "@lit-protocol/auth-helpers": "^7.3.0",
+    "@lit-protocol/constants": "^7.3.0",
+    "@lit-protocol/contracts-sdk": "^7.3.0",
+    "@lit-protocol/lit-node-client": "^7.3.0",
+    "@lit-protocol/types": "^7.3.0",
+    "@lit-protocol/vincent-ability-sdk": "^2.3.1",
+    "@lit-protocol/vincent-app-sdk": "2.2.1",
+    "@lit-protocol/vincent-contracts-sdk": "^1.0.1",
+    "@lit-protocol/vincent-scaffold-sdk": "1.1.9-mma",
+    "@noble/secp256k1": "^2.2.3",
+    "@sentry/cli": "^2.52.0",
+    "@sentry/node": "^10.5.0",
+    "@t3-oss/env-core": "^0.12.0",
+    "@whisthub/agenda": "^7.0.2",
+    "consola": "^3.4.2",
+    "cors": "^2.8.5",
+    "dataloader": "^2.2.3",
+    "did-jwt": "^8.0.9",
+    "express": "^4.21.2",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.10.1",
+    "node-cache": "^5.1.2",
+    "semver": "^7.7.2",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/jest": "^29.5.14",
+    "@types/semver": "^7.7.0",
+    "ethers": "^5.8.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.0",
+    "unbuild": "^3.5.0",
+    "zod": "^3.25.76"
+  }
+}
