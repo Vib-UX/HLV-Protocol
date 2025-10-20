@@ -1,0 +1,6 @@
+[submodule "vincent-starter-app"]
+	path = vincent-starter-app
+	url = https://github.com/Vib-UX/vincent-starter-app
+[submodule "vincent-ability-starter-kit"]
+	path = vincent-ability-starter-kit
+	url = https://github.com/Vib-UX/vincent-ability-starter-kit
